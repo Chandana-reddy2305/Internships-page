@@ -1,0 +1,274 @@
+/* CSS Variables for easy theme changes */
+:root {
+    --primary-color: #007bff; /* A vibrant blue for accents */
+    --secondary-color: #6c757d; /* Muted grey for secondary text */
+    --background-light-start: #e0f2f7; /* Lighter blue for gradient start */
+    --background-light-end: #c8e6c9; /* Lighter green for gradient end */
+    --card-background: #ffffff; /* Pure white for card backgrounds */
+    --border-color: #e0e0e0; /* Light grey for subtle borders */
+    --text-color: #343a40; /* Dark grey for general text */
+    --heading-color: #212529; /* Even darker grey for main headings */
+    --button-hover: #0056b3; /* Darker blue for button hover state */
+}
+
+/* Base styles for the body */
+body {
+    font-family: 'Poppins', sans-serif; /* Use the Poppins font */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    /* Apply a linear gradient background for a softer, more attractive look */
+    background: linear-gradient(to bottom right, var(--background-light-start), var(--background-light-end));
+    min-height: 100vh; /* Ensure the gradient covers the full viewport height */
+    color: var(--text-color); /* Set default text color */
+    line-height: 1.6; /* Improve readability with line spacing */
+}
+
+/* Container for centralizing content */
+.container {
+    max-width: 1200px; /* Maximum width for content */
+    margin: 40px auto; /* Center the container with top/bottom margin */
+    padding: 0 20px; /* Horizontal padding for smaller screens */
+}
+
+/* Header section styling */
+header {
+    text-align: center; /* Center align header content */
+    margin-bottom: 50px; /* Space below the header */
+    position: relative; /* Needed for positioning the download button */
+}
+
+/* Styling for the Vault of Codes logo text */
+.vault-logo {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for the logo text */
+    font-size: 2.5em; /* Large font size for prominence */
+    font-weight: 700; /* Bold font weight */
+    color: var(--primary-color); /* Use primary color for the logo */
+    margin-bottom: 20px; /* Space below the logo */
+    letter-spacing: 2px; /* Add some letter spacing for style */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle text shadow */
+    display: block; /* Ensure it takes full width and centers */
+    text-align: center; /* Center the text */
+}
+
+/* Main heading styling */
+h1 {
+    font-size: 3.5em; /* Large font size for impact */
+    color: var(--heading-color); /* Dark heading color */
+    margin-bottom: 10px; /* Space below the heading */
+    letter-spacing: -1px; /* Slightly tighter letter spacing */
+    position: relative; /* Needed for the underline effect */
+    display: inline-block; /* Allows pseudo-element to be positioned relative to text */
+}
+
+/* Underline effect for the main heading using a pseudo-element */
+h1::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position relative to the h1 */
+    left: 50%; /* Start from the middle */
+    bottom: -10px; /* Position below the text */
+    transform: translateX(-50%); /* Center the underline */
+    width: 80px; /* Fixed width for the underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: var(--primary-color); /* Primary color for the underline */
+    border-radius: 2px; /* Slightly rounded corners for the underline */
+}
+
+/* Styling for the download button (now removed from HTML, but kept for reference if needed) */
+.download-button {
+    position: absolute; /* Position relative to the header */
+    top: 0; /* Align to the top of the header */
+    right: 0; /* Align to the right of the header */
+    background-color: var(--primary-color); /* Primary button color */
+    color: white; /* White text color */
+    padding: 10px 25px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1em; /* Standard font size */
+    cursor: pointer; /* Indicate clickable element */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions for hover effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect for the download button */
+.download-button:hover {
+    background-color: var(--button-hover); /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Grid layout for internship cards */
+.internship-grid {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between grid items */
+    margin-bottom: 50px; /* Space below the grid */
+}
+
+/* Styling for individual internship cards */
+.internship-card {
+    background-color: var(--card-background); /* White background for cards */
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, elevated shadow */
+    padding: 30px; /* Padding inside the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover */
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Distribute space between items */
+}
+
+/* Hover effect for internship cards */
+.internship-card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); /* Deeper shadow on hover */
+}
+
+/* Heading within internship cards */
+.internship-card h2 {
+    font-size: 1.8em; /* Larger font for card titles */
+    color: var(--primary-color); /* Primary color for card titles */
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 20px; /* Space below title */
+    border-bottom: 2px solid var(--border-color); /* Subtle underline */
+    padding-bottom: 15px; /* Padding for the underline */
+}
+
+/* List styling within internship cards */
+.internship-card ul {
+    list-style: none; /* Remove default list bullets */
+    padding: 0; /* Remove default list padding */
+    margin-bottom: 30px; /* Space below the list */
+    flex-grow: 1; /* Allow the list to take up available space */
+}
+
+/* List item styling within internship cards */
+.internship-card ul li {
+    margin-bottom: 12px; /* Space between list items */
+    display: flex; /* Use flexbox for label-value alignment */
+    align-items: center; /* Vertically align items */
+    font-size: 1.05em; /* Slightly larger font for list items */
+    color: var(--text-color); /* Text color for list items */
+}
+
+/* Strong tag (labels) within list items */
+.internship-card ul li strong {
+    min-width: 80px; /* Ensure labels have consistent width for alignment */
+    color: var(--heading-color); /* Darker color for labels */
+}
+
+/* Styling for the "View Details" button */
+.view-details-button {
+    display: inline-block; /* Make it behave like a block but allow text flow */
+    background-color: var(--primary-color); /* Primary button color */
+    color: white; /* White text color */
+    padding: 12px 25px; /* Padding inside the button */
+    border: none; /* No border */
+    border-radius: 8px; /* More rounded corners */
+    font-size: 1.1em; /* Slightly larger font size */
+    cursor: pointer; /* Indicate clickable element */
+    text-decoration: none; /* Remove underline from link */
+    text-align: center; /* Center the text */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    width: 100%; /* Make button full width within its parent */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Subtle shadow */
+}
+
+/* Hover effect for the "View Details" button */
+.view-details-button:hover {
+    background-color: var(--button-hover); /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3); /* Deeper shadow on hover */
+}
+
+/* Styling for the instructions section (now empty as per user request) */
+.instructions {
+    background-color: var(--card-background); /* White background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    padding: 30px; /* Padding inside */
+    margin-top: 50px; /* Space above */
+    text-align: center; /* Center align text */
+    /* Added display: none; to hide the entire section if it's empty */
+    display: none;
+}
+
+/* Paragraphs within the instructions section */
+.instructions p {
+    font-size: 1.15em; /* Slightly larger font */
+    margin-bottom: 15px; /* Space below paragraphs */
+    color: var(--heading-color); /* Darker text color */
+}
+
+/* Links within the instructions section */
+.instructions a {
+    color: var(--primary-color); /* Primary color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: 600; /* Bolder text */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for links in instructions */
+.instructions a:hover {
+    color: var(--button-hover); /* Darker blue on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Responsive adjustments for screens up to 768px (tablets and smaller) */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto; /* Reduce top/bottom margin */
+        padding: 0 15px; /* Reduce horizontal padding */
+    }
+
+    .vault-logo {
+        font-size: 2em; /* Adjust logo size for smaller screens */
+    }
+
+    h1 {
+        font-size: 2.5em; /* Reduce heading font size */
+    }
+
+    header {
+        margin-bottom: 30px; /* Reduce header bottom margin */
+    }
+
+    /* Since download button is removed, this might not be strictly needed,
+       but keeping it for robustness if a similar element were added */
+    .download-button {
+        position: static; /* Remove absolute positioning */
+        margin-bottom: 20px; /* Add space below button when stacked */
+        width: 100%; /* Make button full width */
+        text-align: center; /* Center text */
+    }
+
+    .internship-grid {
+        grid-template-columns: 1fr; /* Single column layout for cards */
+    }
+
+    .internship-card {
+        padding: 25px; /* Slightly reduce card padding */
+    }
+
+    .internship-card h2 {
+        font-size: 1.5em; /* Reduce card title font size */
+    }
+
+    .instructions {
+        padding: 25px; /* Slightly reduce instructions padding */
+    }
+}
+
+/* Responsive adjustments for screens up to 480px (mobile phones) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em; /* Further reduce heading font size */
+    }
+
+    .internship-card ul li {
+        flex-direction: column; /* Stack label and value vertically */
+        align-items: flex-start; /* Align stacked items to the start */
+    }
+
+    .internship-card ul li strong {
+        margin-bottom: 5px; /* Add space below stacked labels */
+    }
+}
